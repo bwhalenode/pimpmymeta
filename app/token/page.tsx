@@ -1,14 +1,10 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Copy, ExternalLink, TrendingUp } from 'lucide-react';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import { TOKENOMICS, SOLANA_CONFIG, EXTERNAL_LINKS } from '@/lib/constants';
-
-export const metadata: Metadata = {
-  title: 'Token',
-  description: 'Learn about the $PMM token, tokenomics, and how to buy.',
-};
 
 export default function TokenPage() {
   return (

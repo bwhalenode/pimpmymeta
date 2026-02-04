@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
 import { Copy, ExternalLink, TrendingUp, Clock } from 'lucide-react';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
@@ -7,11 +8,6 @@ import Badge from '@/components/ui/Badge';
 import { getCurrentToken, getNextToken, getMigrationWindow } from '@/lib/meta/mockMetas';
 import { EXTERNAL_LINKS } from '@/lib/constants';
 import CountdownTimer from '@/components/meta/CountdownTimer';
-
-export const metadata: Metadata = {
-  title: 'Current Token',
-  description: 'Current trending token in the Pimp My Meta vault.',
-};
 
 export default function CurrentTokenPage() {
   const currentToken = getCurrentToken();
