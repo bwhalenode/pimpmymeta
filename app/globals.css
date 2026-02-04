@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+  }
+
+  .glow-secondary {
+    box-shadow: 0 0 20px rgba(255, 0, 229, 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(112, 0, 255, 0.3);
+  }
+}
+
+/* Wallet Adapter Overrides for Dark Theme */
+.wallet-adapter-button {
+  @apply bg-primary text-primary-foreground hover:opacity-90 transition-opacity;
+}
+
+.wallet-adapter-modal-wrapper {
+  @apply bg-background text-foreground;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
