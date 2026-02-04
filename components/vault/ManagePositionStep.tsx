@@ -109,7 +109,7 @@ const ManagePositionStep: FC<ManagePositionStepProps> = ({
             className="w-full group"
           >
             <ArrowDownLeft className="mr-2 h-5 w-5 group-hover:-translate-x-1 transition-transform" />
-            {withdrawing ? 'Withdrawing...' : 'Withdraw Position'}
+            {withdrawing ? 'Withdrawing (Demo)...' : 'Withdraw (Demo)'}
           </Button>
 
           <Button

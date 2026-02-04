@@ -218,7 +218,7 @@ const MigrationStatusStep: FC<MigrationStatusStepProps> = ({
 
           {isCompleted && !claimed && (
             <Button onClick={handleClaim} disabled={claiming} size="lg" className="flex-1">
-              {claiming ? 'Claiming...' : 'Claim New Tokens'}
+              {claiming ? 'Claiming (Demo)...' : 'Claim (Demo)'}
             </Button>
           )}
 

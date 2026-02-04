@@ -88,12 +88,12 @@ const MetaCard: FC<MetaCardProps> = ({ meta, index }) => {
             </div>
           </div>
 
-          {/* Countdown for Candidates */}
-          {meta.status === 'candidate' && meta.migrationDate && (
+          {/* Countdown for Candidates - Placeholder for future feature */}
+          {/* {meta.status === 'candidate' && meta.migrationDate && (
             <div className="mb-4">
               <CountdownTimer targetDate={meta.migrationDate} label="Migration Opens In" />
             </div>
-          )}
+          )} */}
 
           {/* Contract Address */}
           <div className="text-xs">

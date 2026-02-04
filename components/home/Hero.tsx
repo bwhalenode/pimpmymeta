@@ -2,6 +2,7 @@
 
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield } from 'lucide-react';
 import Button from '@/components/ui/Button';
@@ -70,7 +71,7 @@ const Hero: FC = () => {
             </div>
           </motion.div>
 
-          {/* Right: Shrimp Visual (Placeholder) */}
+          {/* Right: PMM Pill Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -79,9 +80,21 @@ const Hero: FC = () => {
           >
             <ShrimpEasterEgg>
               <div className="relative w-64 h-64 md:w-80 md:h-80 animate-float">
-                {/* Placeholder Shrimp Icon - Replace with actual SVG/Image */}
-                <div className="w-full h-full rounded-full bg-gradient-primary glow-primary flex items-center justify-center">
-                  <span className="text-8xl md:text-9xl">🦐</span>
+                {/* PMM Pill with neon rim lighting */}
+                <div className="relative w-full h-full">
+                  {/* Neon glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary via-secondary to-accent opacity-30 blur-2xl animate-pulse-glow" />
+
+                  {/* Pill image container */}
+                  <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-primary/50 shadow-2xl shadow-primary/50">
+                    <Image
+                      src="/brand/pmm-pill.png"
+                      alt="PMM Pill"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-card border border-primary rounded-full px-4 py-2 glow-primary">
                   <span className="text-sm font-bold text-primary">

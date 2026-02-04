@@ -12,8 +12,23 @@ export interface TokenInfo {
   emoji?: string;
 }
 
+export interface Meta {
+  id: string;
+  name: string;
+  ticker: string;
+  pimpedName?: string;
+  pimpedTicker?: string;
+  description: string;
+  status: 'current' | 'candidate' | 'past';
+  marketCap?: string;
+  volume24h?: string;
+  priceChange24h?: number;
+  contractAddress?: string;
+  emoji?: string;
+}
+
 export interface MigrationWindow {
-  phase: keyof typeof MIGRATION_PHASES;
+  phase: typeof MIGRATION_PHASES[keyof typeof MIGRATION_PHASES];
   depositsOpenAt?: Date;
   depositsCloseAt?: Date;
   migrationStartsAt?: Date;
@@ -62,7 +77,7 @@ export const MOCK_VAULT_STATE: VaultState = {
     emoji: '🐸',
   },
   migrationWindow: {
-    phase: 'deposits_open',
+    phase: MIGRATION_PHASES.DEPOSITS_OPEN,
     depositsOpenAt: new Date(Date.now() - 3600000), // Started 1 hour ago
     depositsCloseAt: new Date(Date.now() + 3600000), // Closes in 1 hour
     migrationStartsAt: new Date(Date.now() + 7200000), // Starts in 2 hours
@@ -138,22 +153,83 @@ export async function fetchPastMigrations(): Promise<PastMigration[]> {
 }
 
 // Helper to check if deposits are allowed
-export function areDepositsAllowed(phase: keyof typeof MIGRATION_PHASES): boolean {
+export function areDepositsAllowed(phase: typeof MIGRATION_PHASES[keyof typeof MIGRATION_PHASES]): boolean {
   return phase === MIGRATION_PHASES.DEPOSITS_OPEN;
 }
 
 // Helper to check if withdrawals are allowed
-export function areWithdrawalsAllowed(phase: keyof typeof MIGRATION_PHASES): boolean {
+export function areWithdrawalsAllowed(phase: typeof MIGRATION_PHASES[keyof typeof MIGRATION_PHASES]): boolean {
   return phase !== MIGRATION_PHASES.MIGRATING;
 }
 
 // Helper to format migration phase for display
-export function getMigrationPhaseLabel(phase: keyof typeof MIGRATION_PHASES): string {
-  const labels = {
+export function getMigrationPhaseLabel(phase: typeof MIGRATION_PHASES[keyof typeof MIGRATION_PHASES]): string {
+  const labels: Record<string, string> = {
     [MIGRATION_PHASES.DEPOSITS_OPEN]: 'Deposits Open',
     [MIGRATION_PHASES.DEPOSITS_CLOSED]: 'Deposits Closed - Waiting for Migration',
     [MIGRATION_PHASES.MIGRATING]: 'Migration In Progress',
     [MIGRATION_PHASES.COMPLETED]: 'Migration Complete - Claim Available',
   };
   return labels[phase] || 'Unknown';
+}
+
+// Mock metas data for meta tracker
+export const MOCK_METAS: Meta[] = [
+  {
+    id: 'penguin-2026-q1',
+    name: 'Pudgy Penguin',
+    ticker: '$PENGU',
+    pimpedName: 'Pudgy Penguin',
+    pimpedTicker: '$PENGU',
+    description: 'Current trending meta on Solana. Deposit to vault for next migration.',
+    status: 'current',
+    marketCap: '$42M',
+    volume24h: '$2.1M',
+    priceChange24h: 15.6,
+    contractAddress: 'PENGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    emoji: '🐧',
+  },
+  {
+    id: 'frog-meta-next',
+    name: 'Pepe Frog',
+    ticker: '$FROG',
+    pimpedName: 'Pepe Frog',
+    pimpedTicker: '$FROG',
+    description: 'Next migration target. Rising meta with strong community.',
+    status: 'candidate',
+    marketCap: '$8M',
+    volume24h: '$420K',
+    priceChange24h: 8.2,
+    contractAddress: 'FROGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    emoji: '🐸',
+  },
+  {
+    id: 'dog-meta-2025',
+    name: 'Dog With Hat',
+    ticker: '$WIF',
+    pimpedName: 'Dog With Hat',
+    pimpedTicker: '$WIF',
+    description: 'Previous meta from Q4 2025.',
+    status: 'past',
+    marketCap: '$120M',
+    volume24h: '$5.2M',
+    priceChange24h: -3.2,
+    contractAddress: 'DOGxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    emoji: '🐕',
+  },
+];
+
+// Get current meta
+export function getCurrentMeta(): Meta | null {
+  return MOCK_METAS.find((meta) => meta.status === 'current') || null;
+}
+
+// Get candidate metas
+export function getCandidateMetas(): Meta[] {
+  return MOCK_METAS.filter((meta) => meta.status === 'candidate');
+}
+
+// Get past metas
+export function getPastMetas(): Meta[] {
+  return MOCK_METAS.filter((meta) => meta.status === 'past');
 }

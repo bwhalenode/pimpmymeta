@@ -183,7 +183,7 @@ const DepositCurrentTokenStep: FC<DepositCurrentTokenStepProps> = ({ onNext, onB
             size="lg"
             className="flex-1"
           >
-            {depositsAllowed ? 'Deposit Tokens' : 'Deposits Closed'}
+            {depositsAllowed ? 'Deposit (Demo)' : 'Deposits Closed'}
           </Button>
         </div>
       </Card>

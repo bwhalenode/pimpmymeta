@@ -11,6 +11,7 @@ export const SOLANA_CONFIG = {
   vaultProgramId: process.env.NEXT_PUBLIC_VAULT_PROGRAM_ID || '11111111111111111111111111111111',
   currentTokenMint: process.env.NEXT_PUBLIC_CURRENT_TOKEN_MINT || '11111111111111111111111111111111',
   nextTokenMint: process.env.NEXT_PUBLIC_NEXT_TOKEN_MINT || '11111111111111111111111111111111',
+  pmmMint: process.env.NEXT_PUBLIC_PMM_MINT || 'PMM1111111111111111111111111111111111111111',
   feeBps: parseInt(process.env.NEXT_PUBLIC_FEE_BPS || '0'), // Fee in basis points (0 = 0%, 100 = 1%)
 };
 
@@ -37,10 +38,10 @@ export const NAV_LINKS = [
 ];
 
 export const VAULT_STEPS = [
-  { id: 1, title: 'Connect Wallet', description: 'Connect your Solana wallet' },
-  { id: 2, title: 'Deposit', description: 'Deposit current token' },
-  { id: 3, title: 'Manage Position', description: 'View & withdraw position' },
-  { id: 4, title: 'Migration Status', description: 'Track migration & claim' },
+  { id: 1, title: 'Enter Wallet (Optional)', description: 'Enter your Solana wallet address' },
+  { id: 2, title: 'Deposit (Demo)', description: 'Demo deposit of current token' },
+  { id: 3, title: 'Manage Position (Demo)', description: 'View & withdraw position demo' },
+  { id: 4, title: 'Migration Status (Demo)', description: 'Track migration & claim demo' },
 ];
 
 export const TRUST_FEATURES = [
@@ -78,4 +79,12 @@ export const MIGRATION_PHASE_LABELS = {
   [MIGRATION_PHASES.DEPOSITS_CLOSED]: 'Deposits Closed - Waiting',
   [MIGRATION_PHASES.MIGRATING]: 'Migration In Progress',
   [MIGRATION_PHASES.COMPLETED]: 'Migration Complete',
+};
+
+export const TOKENOMICS = {
+  ticker: '$PMM',
+  name: 'Pimp My Meta',
+  description: 'The governance token for the Pimp My Meta protocol.',
+  totalSupply: '1,000,000,000',
+  decimals: 9,
 };

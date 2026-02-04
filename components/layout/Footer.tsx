@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Twitter, Send, MessageCircle } from 'lucide-react';
 import { SOCIAL_LINKS, NAV_LINKS } from '@/lib/constants';
 
@@ -12,9 +13,20 @@ const Footer: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-4">
-              Pimp My Meta
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/50">
+                <Image
+                  src="/brand/pmm-pill.png"
+                  alt="PMM Logo"
+                  width={48}
+                  height={48}
+                  className="object-cover"
+                />
+              </div>
+              <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Pimp My Meta
+              </h3>
+            </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               Surf the meta. Keep the shrimp. Trustless token migrations on Solana.
             </p>

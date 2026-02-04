@@ -10,6 +10,19 @@ export default function VaultPage() {
   return (
     <div className="py-20 bg-gradient-to-b from-background via-card to-background min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Demo Banner */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-2 border-blue-500/50 rounded-lg p-6 text-center">
+            <h3 className="text-xl font-bold text-blue-400 mb-2">
+              🎮 Demo Mode - UI Preview
+            </h3>
+            <p className="text-muted-foreground">
+              Wallet connection and on-chain program integration coming soon.
+              Explore the vault interface and see how migrations will work.
+            </p>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">

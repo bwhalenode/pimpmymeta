@@ -2,13 +2,13 @@
 
 import { FC, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import Button from '@/components/ui/Button';
-import WalletButton from '@/components/WalletButton';
 
 const Header: FC = () => {
   const pathname = usePathname();
@@ -19,8 +19,18 @@ const Header: FC = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/50 group-hover:ring-primary transition-all">
+              <Image
+                src="/brand/pmm-pill.png"
+                alt="PMM Logo"
+                width={40}
+                height={40}
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="text-xl font-bold">
               <span className="bg-gradient-primary bg-clip-text text-transparent">
                 Pimp My Meta
               </span>
@@ -45,12 +55,11 @@ const Header: FC = () => {
             ))}
           </div>
 
-          {/* Desktop CTA + Wallet */}
+          {/* Desktop CTA */}
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Link href="/vault">
               <Button size="sm">Open Vault</Button>
             </Link>
-            <WalletButton />
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,7 +107,6 @@ const Header: FC = () => {
                       Open Vault
                     </Button>
                   </Link>
-                  <WalletButton />
                 </div>
               </div>
             </motion.div>
