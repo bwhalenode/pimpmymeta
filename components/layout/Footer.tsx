@@ -95,7 +95,7 @@ const Footer: FC = () => {
             <p className="text-xs text-muted-foreground">
               <strong className="text-foreground">DISCLAIMER:</strong> Cryptocurrency
               investments carry significant risk. Do your own research. Pimp My Meta
-              ($PMM) is a utility token for migration services on Solana. This is not
+              is a migration vault service on Solana. This is not
               financial advice. We do not guarantee returns or profits. Never invest more
               than you can afford to lose. Smart contract interactions are irreversible.
               Always verify contract addresses and URLs before transactions.

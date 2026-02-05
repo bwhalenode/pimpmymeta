@@ -181,8 +181,8 @@ export default function TokenPage() {
                   <li>1. Get a Solana wallet (Phantom, Solflare, etc.)</li>
                   <li>2. Fund your wallet with SOL (buy from exchanges like Coinbase)</li>
                   <li>3. Go to Raydium or Jupiter</li>
-                  <li>4. Paste the $PMM contract address</li>
-                  <li>5. Swap SOL for $PMM</li>
+                  <li>4. Paste the current token contract address</li>
+                  <li>5. Swap SOL for the current token</li>
                   <li>6. Confirm transaction in your wallet</li>
                 </ol>
               </CardContent>
@@ -215,9 +215,9 @@ export default function TokenPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card hover>
               <CardContent className="p-6">
-                <h3 className="font-semibold mb-2">Reduced Migration Fees</h3>
+                <h3 className="font-semibold mb-2">Low Migration Fees</h3>
                 <p className="text-sm text-muted-foreground">
-                  Holding $PMM tokens reduces your vault migration fees by up to 50%
+                  Vault migrations have minimal fees to sustain the platform
                 </p>
               </CardContent>
             </Card>

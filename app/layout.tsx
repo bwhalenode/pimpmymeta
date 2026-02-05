@@ -9,7 +9,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_CONFIG.url),
+  metadataBase: new URL('https://pimpmymeta.vercel.app'),
   title: {
     default: 'Pimp My Meta',
     template: '%s | Pimp My Meta',
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: SITE_CONFIG.url,
+    url: 'https://pimpmymeta.vercel.app',
     title: 'Pimp My Meta',
     description: SITE_CONFIG.description,
     siteName: 'Pimp My Meta',
     images: [
       {
-        url: '/og.png',
+        url: '/pmm-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Pimp My Meta - Surf the meta. Rotate fast. Stay ahead.',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pimp My Meta',
     description: SITE_CONFIG.description,
-    images: ['/og.png'],
+    images: ['/pmm-og.jpg'],
     creator: '@pimpmymeta',
   },
   robots: {

@@ -134,7 +134,7 @@ export default function CommunityPage() {
                   <span className="text-primary flex-shrink-0">✓</span>
                   <span>
                     <strong className="text-foreground">Stay on topic:</strong> Keep discussions
-                    relevant to $PMM, metas, and Solana DeFi.
+                    relevant to Pimp My Meta, metas, and Solana DeFi.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">

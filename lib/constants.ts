@@ -81,9 +81,9 @@ export const MIGRATION_PHASE_LABELS = {
 };
 
 export const TOKENOMICS = {
-  ticker: '$PMM',
+  ticker: 'PMM',
   name: 'Pimp My Meta',
-  description: 'The governance token for the Pimp My Meta protocol.',
+  description: 'A trustless migration vault for rotating into the current meta token.',
   totalSupply: '1,000,000,000',
   decimals: 9,
 };

@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const faqs = [
   {
     question: 'What is Pimp My Meta?',
-    answer: 'Pimp My Meta is a trustless token migration protocol on Solana. We help you automatically migrate from old meme tokens to new trending metas without manual trading. The shrimp (our original mascot) stays, but we chase the latest meta trends.',
+    answer: 'Pimp My Meta is a trustless migration vault on Solana. We help you automatically rotate from old meme tokens to new trending metas without manual trading. The shrimp (our original mascot) stays, but we chase the latest meta trends.',
   },
   {
     question: 'How do migrations work?',
@@ -44,8 +44,8 @@ const faqs = [
     answer: 'We support all major Solana wallets: Phantom, Solflare, Backpack, and any wallet compatible with Solana\'s wallet-adapter standard.',
   },
   {
-    question: 'Is there a token for this project?',
-    answer: 'Yes, $PMM is the utility token. Holding $PMM may provide benefits like reduced fees, governance voting, and early access to new meta migrations. See the Token page for details.',
+    question: 'How do I get started?',
+    answer: 'Connect your Solana wallet, deposit your current token into the migration vault, and you\'ll automatically rotate into the new meta token when we migrate. It\'s that simple.',
   },
 ];
 
@@ -130,8 +130,8 @@ export default function DocsPage() {
             </CardHeader>
             <CardContent className="space-y-4 text-muted-foreground">
               <p>
-                Pimp My Meta ($PMM) is a trustless token migration protocol built on Solana.
-                We help meme coin traders automatically migrate between trending metas without
+                Pimp My Meta is a trustless migration vault built on Solana.
+                We help meme coin traders automatically rotate between trending metas without
                 manual swapping.
               </p>
               <p>
@@ -141,7 +141,7 @@ export default function DocsPage() {
               </p>
               <p>
                 <strong className="text-foreground">The Solution:</strong> Automated
-                migrations via smart contracts. Deposit old token → contract swaps via DEX →
+                migrations via smart contracts. Deposit current token → contract swaps via DEX →
                 claim new token. All trustless, all on-chain.
               </p>
             </CardContent>
