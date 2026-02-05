@@ -6,7 +6,8 @@
       "Bash(npx tsc:*)",
       "Bash(npm run lint:*)",
       "Bash(echo:*)",
-      "Bash(ls -la \"e:\\\\#pimp my meta#\\\\website\\\\public\\\\brand\"\" 2>&1 || echo \"Directory does not exist \")"
+      "Bash(ls -la \"e:\\\\#pimp my meta#\\\\website\\\\public\\\\brand\"\" 2>&1 || echo \"Directory does not exist \")",
+      "Bash(ls:*)"
     ]
   }
 }

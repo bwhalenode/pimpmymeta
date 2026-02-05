@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || 'Pimp My Meta',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://pimpmymeta.com',
-  description: 'Surf the meta. Keep the shrimp. Automated migrations for trending tokens on Solana.',
-  tagline: 'Surf the meta. Keep the shrimp.',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://pimpmymeta.vercel.app',
+  description: 'Surf the meta. Deposit once. When we migrate, you move with it. Fast rotations, clean UX, transparent rules.',
+  tagline: 'Surf the meta. Rotate fast. Stay ahead.',
 };
 
 export const SOLANA_CONFIG = {
@@ -16,9 +16,8 @@ export const SOLANA_CONFIG = {
 };
 
 export const SOCIAL_LINKS = {
-  x: process.env.NEXT_PUBLIC_X_URL || 'https://twitter.com/pimpmymeta',
-  telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/pimpmymeta',
-  discord: process.env.NEXT_PUBLIC_DISCORD_URL || 'https://discord.gg/pimpmymeta',
+  x: process.env.NEXT_PUBLIC_X_URL || 'https://x.com/shrimpypoos',
+  telegram: process.env.NEXT_PUBLIC_TELEGRAM_URL || 'https://t.me/pimpmyshrimp',
   dexscreener: process.env.NEXT_PUBLIC_DEXSCREENER_URL || 'https://dexscreener.com/solana/',
 };
 

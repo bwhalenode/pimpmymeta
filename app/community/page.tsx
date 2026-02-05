@@ -1,18 +1,18 @@
 import { Metadata } from 'next';
-import { Twitter, Send, MessageCircle, Download, Image } from 'lucide-react';
+import { X, Send, Download, Image } from 'lucide-react';
 import Card, { CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import { SOCIAL_LINKS } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Community',
-  description: 'Join the Pimp My Meta community on X, Telegram, and Discord.',
+  description: 'Join the Pimp My Meta community on X and Telegram.',
 };
 
 const socialChannels = [
   {
     name: 'X (Twitter)',
-    icon: Twitter,
+    icon: X,
     description: 'Follow for updates, memes, and meta calls',
     url: SOCIAL_LINKS.x,
     cta: 'Follow on X',
@@ -25,14 +25,6 @@ const socialChannels = [
     url: SOCIAL_LINKS.telegram,
     cta: 'Join Telegram',
     color: 'text-[#0088cc]',
-  },
-  {
-    name: 'Discord',
-    icon: MessageCircle,
-    description: 'Connect with the core community',
-    url: SOCIAL_LINKS.discord,
-    cta: 'Join Discord',
-    color: 'text-[#5865F2]',
   },
 ];
 
@@ -64,7 +56,7 @@ export default function CommunityPage() {
         {/* Social Channels */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8 text-center">Social Channels</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {socialChannels.map((channel, index) => {
               const Icon = channel.icon;
               return (
@@ -196,7 +188,7 @@ export default function CommunityPage() {
         {/* Stats */}
         <section>
           <h2 className="text-3xl font-bold mb-8 text-center">Community Stats</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card hover className="text-center">
               <CardContent className="p-6">
                 <p className="text-3xl font-bold text-primary mb-2">12.5K</p>
@@ -208,13 +200,6 @@ export default function CommunityPage() {
               <CardContent className="p-6">
                 <p className="text-3xl font-bold text-secondary mb-2">8.2K</p>
                 <p className="text-sm text-muted-foreground">Telegram Members</p>
-              </CardContent>
-            </Card>
-
-            <Card hover className="text-center">
-              <CardContent className="p-6">
-                <p className="text-3xl font-bold text-accent mb-2">4.1K</p>
-                <p className="text-sm text-muted-foreground">Discord Members</p>
               </CardContent>
             </Card>
 

@@ -31,12 +31,11 @@ const Hero: FC = () => {
                 Surf the meta.
               </span>
               <br />
-              <span className="text-foreground">Keep the shrimp.</span>
+              <span className="text-foreground">Rotate fast. Stay ahead.</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl">
-              Trustless token migrations on Solana. Chase the latest meme meta while
-              your shrimp stays safe.
+              Deposit once. When we migrate, you move with it. Fast rotations, clean UX, transparent rules.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

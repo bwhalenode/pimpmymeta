@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Twitter, Send, MessageCircle } from 'lucide-react';
+import { X, Send } from 'lucide-react';
 import { SOCIAL_LINKS, NAV_LINKS } from '@/lib/constants';
 
 const Footer: FC = () => {
@@ -28,7 +28,7 @@ const Footer: FC = () => {
               </h3>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Surf the meta. Keep the shrimp. Trustless token migrations on Solana.
+              Surf the meta. Rotate fast. Stay ahead. Trustless token migrations on Solana.
             </p>
             <div className="flex space-x-4">
               <a
@@ -37,7 +37,7 @@ const Footer: FC = () => {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <X className="h-5 w-5" />
               </a>
               <a
                 href={SOCIAL_LINKS.telegram}
@@ -46,14 +46,6 @@ const Footer: FC = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Send className="h-5 w-5" />
-              </a>
-              <a
-                href={SOCIAL_LINKS.discord}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <MessageCircle className="h-5 w-5" />
               </a>
             </div>
           </div>
